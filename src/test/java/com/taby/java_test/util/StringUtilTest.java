@@ -1,14 +1,12 @@
 package com.taby.java_test.util;
 
-public class StringUtilTest {
-    public static void main(String[] args){
-        assertEquals(StringUtil.repeat("hola",3),"holaholahola");
-        assertEquals(StringUtil.repeat("hola",1),"hola");
-    }
+import org.junit.Assert;
+import org.junit.Test;
 
-    private static void assertEquals(String actual, String expected) {
-        if(!actual.equals(expected)){
-            throw new RuntimeException("Error: "+actual+" -> is not equal to expected: "+expected);
-        }
+public class StringUtilTest {
+    @Test
+    public void testRepeat(){
+        Assert.assertEquals("holaholahola",StringUtil.repeat("hola",3));
+        Assert.assertEquals("hola",StringUtil.repeat("hola",1));
     }
 }
