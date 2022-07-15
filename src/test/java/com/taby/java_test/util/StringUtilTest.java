@@ -1,6 +1,7 @@
 package com.taby.java_test.util;
 
 import org.junit.Assert;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class StringUtilTest {
@@ -19,5 +20,22 @@ public class StringUtilTest {
     @Test (expected = IllegalArgumentException.class)
     public void repeat_string_negative_times(){
         StringUtil.repeat("hola",-1);
+    }
+
+    @Test
+    public void test_string_is_no_empty() {
+        assertFalse(StringUtil.isEmpty("hola"));
+    }
+    @Test
+    public void empty_quote_is_string_empty() {
+        assertTrue(StringUtil.isEmpty(""));
+    }
+    @Test
+    public void null_is_string_empty() {
+        assertTrue(StringUtil.isEmpty(null));
+    }
+    @Test
+    public void string_space_is_string_empty() {
+        assertTrue(StringUtil.isEmpty(" "));
     }
 }
